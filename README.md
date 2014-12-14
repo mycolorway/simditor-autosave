@@ -1,4 +1,4 @@
-simditor-markdown
+simditor-autosave
 =================
 
 [Simditor](http://simditor.tower.im/) 的官方扩展，运用HTML5的localStorage技术来自动保存用户输入内容。
