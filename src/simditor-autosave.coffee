@@ -16,12 +16,12 @@ class SimditorAutosave extends SimpleModule
     path = path + @opts.autosave + "/autosave/"
 
     @editor.on "valuechanged", =>
-      @Storage.set path, @editor.getValue()
+      @storage.set path, @editor.getValue()
 
     @editor.el.closest('form').on 'ajax:success.simditor-' + @editor.id, (e) =>
-      @Storage.remove path
+      @storage.remove path
 
-    val = @Storage.get path
+    val = @storage.get path
     return unless val
 
     currentVal = @editor.textarea.val()
@@ -31,11 +31,11 @@ class SimditorAutosave extends SimpleModule
       if confirm '有未保存的内容，确定要回复么？'
         @editor.setValue val
       else
-        @Storage.remove path
+        @storage.remove path
     else
       @editor.setValue val
 
-  Storage:
+  storage:
     supported: () ->
       try
         localStorage.setItem('_storageSupported', 'yes')
@@ -43,11 +43,8 @@ class SimditorAutosave extends SimpleModule
         return true
       catch error
         return false
-    set: (key, val, session) ->
-      if session is null
-        session = false
-      if !@.supported()
-        return
+    set: (key, val, session = false) ->
+      return unless @.supported()
       storage = if session then sessionStorage else localStorage
       storage.setItem(key, val)
     get: (key, session) ->
