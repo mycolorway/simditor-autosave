@@ -21,13 +21,13 @@ simditor-autosave
 ```
 
 方法二：
-在Simditor初始化时，直接写入配置信息中,例如下面的设置，效果个上面一样，
+在Simditor初始化时，直接写入配置信息中,例如下面的设置，效果跟上面一样，
 数据也将保存在  url_path/editor-content/autosave/   中
 ```javascript
 new Simditor({
   textarea: textareaElement,
   ...,
-  autosave: editor-content
+  autosave: 'editor-content'
 })
 ```
-__注意__ 当方法一和方法二同时定义时，则优先选择方法而中参数作为保存时的路径
+__注意__ 当方法一和方法二同时定义时，则优先选择方法二中的参数作为保存时的路径
