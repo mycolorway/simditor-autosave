@@ -28,13 +28,10 @@ class SimditorAutosave extends SimpleModule
     return if val is currentVal
 
     if @editor.textarea.is('[data-autosave-confirm]')
-      simple.dialog.confirm
-        content: '有未保存的内容，确定要恢复吗？'
-        confirmCallback: (e, ok) =>
-          if ok
-            @editor.setValue val
-          else
-            simple.util.storage.remove path
+      if confirm '有未保存的内容，确定要回复么？'
+        @editor.setValue val
+      else
+        simple.util.storage.remove path
     else
       @editor.setValue val
 
