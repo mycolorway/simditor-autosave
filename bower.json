@@ -1,0 +1,26 @@
+{
+  "name": "simditor-autosave",
+  "version": "0.1.0",
+  "authors": [
+    "wangxuke<wangxuke@mycolorway.com>"
+  ],
+  "description": "a Autosave plugin for Simditor",
+  "main": "lib/simditor-autosave.js",
+  "keywords": [
+    "simditor",
+    "autosave"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mycolorway/simditor-autosave",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor",
+    "Gruntfile.coffee",
+    "package.json"
+  ],
+  "dependencies": {
+    "jquery": "2.x",
+    "simditor": "2.x"
+  }
+}
