@@ -40,27 +40,21 @@ class SimditorAutosave extends SimpleModule
       try
         localStorage.setItem('_storageSupported', 'yes')
         localStorage.removeItem('_storageSupported')
-        return true
+        true
       catch error
-        return false
+        false
     set: (key, val, session = false) ->
       return unless @.supported()
       storage = if session then sessionStorage else localStorage
       storage.setItem(key, val)
-    get: (key, session) ->
-      if session is null
-        session = false
-      if !@.supported()
-        return
+    get: (key, session = false) ->
+      return unless @.supported()
       storage = if session then sessionStorage else localStorage
       storage[key]
-    remove: (key, session) ->
-      if session is null
-        session = false
-      if !@.supported()
-        return
+    remove: (key, session = false) ->
+      return unless @.supported()
       storage = if session then sessionStorage else localStorage
-      return storage.removeItem(key);
+      storage.removeItem(key);
 
 Simditor.connect SimditorAutosave
 
