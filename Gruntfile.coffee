@@ -19,15 +19,15 @@ module.exports = (grunt) ->
       all:
         src: 'lib/simditor-autosave.js'
         template: 'umd'
-        amdModuleId: 'Simditor'
-        objectToExport: 'Simditor'
-        globalAlias: 'Simditor'
+        amdModuleId: 'simditor-autosave'
+        objectToExport: 'SimditorAutosave'
+        globalAlias: 'SimditorAutosave'
         deps:
-          'default': ['$', 'SimpleModule']
+          'default': ['$', 'SimpleModule','Simditor']
           amd: ['jquery', 'simple-module', 'simditor']
           cjs: ['jquery', 'simple-module', 'simditor']
           global:
-            items: ['jQuery', 'SimpleModule']
+            items: ['jQuery', 'SimpleModule','Simditor']
             prefix: ''
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
