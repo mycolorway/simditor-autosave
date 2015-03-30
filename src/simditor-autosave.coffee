@@ -5,15 +5,19 @@ class SimditorAutosave extends SimpleModule
 
   opts:
     autosave: false
+    autosave_global_key: false
 
   _init: () ->
     @editor = @_module
     @opts.autosave = @opts.autosave || @editor.textarea.data('autosave')
     return unless @opts.autosave
 
-    link = $( "<a/>", {href: location.href})
-    path = "/" + link[0].pathname.replace( /\/$/g, "" ).replace( /^\//g, "" ) + "/"
-    path = path + @opts.autosave + "/autosave/"
+    unless @opts.autosave_global_key
+      link = $( "<a/>", {href: location.href})
+      path = "/" + link[0].pathname.replace( /\/$/g, "" ).replace( /^\//g, "" ) + "/"
+      path = path + @opts.autosave + "/autosave/"
+    else
+      path = "/" + @opts.autosave + "/autosave/global/" + @opts.autosave_global_key
 
     @editor.on "valuechanged", =>
       @storage.set path, @editor.getValue()
