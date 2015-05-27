@@ -1,8 +1,8 @@
 {
   "name": "simditor-autosave",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
-    "wangxuke<wangxuke@mycolorway.com>"
+    "farthinker<farthinker@gmail.com>"
   ],
   "description": "a Autosave plugin for Simditor",
   "main": "lib/simditor-autosave.js",
@@ -20,7 +20,7 @@
     "package.json"
   ],
   "dependencies": {
-    "jquery": "2.x",
-    "simditor": "2.x"
+    "jquery": "~2.1.4",
+    "simditor": "~2.1.11"
   }
 }
