@@ -4,17 +4,20 @@ class SimditorAutosave extends SimpleModule
   @pluginName: 'Autosave'
 
   opts:
-    name: 'simditor'
-    path: null
+    autosave: true
+    autosavePath: null
 
   _init: () ->
     @editor = @_module
+    return unless @opts.autosave
 
-    if @opts.path
-      @path = @opts.path
+    @name = if typeof @opts.autosave == 'string' then @opts.autosave else 'simditor'
+
+    if @opts.autosavePath
+      @path = @opts.autosavePath
     else
       link = $( "<a/>", {href: location.href})
-      name = @editor.textarea.data('autosave') || @opts.name
+      name = @editor.textarea.data('autosave') || @name
       @path = "/#{link[0].pathname.replace( /\/$/g, "" ).replace( /^\//g, "" )}/autosave/#{name}/"
 
     return unless @path
