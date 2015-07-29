@@ -1,6 +1,6 @@
 {
   "name": "simditor-autosave",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     "farthinker<farthinker@gmail.com>"
   ],
@@ -21,6 +21,6 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "simditor": "~2.1.15"
+    "simditor": "~2.2.0"
   }
 }
