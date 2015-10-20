@@ -1,7 +1,7 @@
 {
   "name": "simditor-autosave",
   "description": "A autosave plugin for Simditor",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/mycolorway/simditor-autosave",
   "author": {
     "name": "farthinker",
