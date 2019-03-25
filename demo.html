@@ -14,23 +14,18 @@
 
 <div class="wrapper">
     <section id="page-demo">
-        <textarea id="txt-content" data-autosave="editor-content" autofocus></textarea>
+        <textarea id="txt-content" data-autosave="editor-content" data-autosave-confirm="你上次编辑对内容还没有保存，是否恢复？" autofocus></textarea>
     </section>
 
     <script type="text/javascript" src="vendor/bower/simple-module/lib/module.js"></script>
     <script type="text/javascript" src="vendor/bower/simple-hotkeys/lib/hotkeys.js"></script>
-    <script type="text/javascript" src="vendor/bower/simple-uploader/lib/uploader.js"></script>
     <script type="text/javascript" src="vendor/bower/simditor/lib/simditor.js"></script>
     <script type="text/javascript" src="lib/simditor-autosave.js"></script>
     <script type="text/javascript">
         $(function() {
             var editor = new Simditor({
                 textarea: $('#txt-content'),
-                placeholder: '这里输入文字...',
-                pasteImage: true,
-                upload: location.search === '?upload' ? {
-                    url: '/upload'
-                } : false
+                placeholder: '这里输入文字...'
             });
         });
     </script>
